@@ -8,5 +8,14 @@
 
 import Foundation
 
-print("Hello, OC P3 RPG")
+print("Jeu de rôles - P3 - formation OC")
+print("================================")
+print(" Game started ")
+// instancier un game
+// créer équipes et joueurs
+print("  ... currect game ... ")
+// jouer
+// présenter vainqueur et scores
 
+print("  Game Over ! ")
+// boucler sur une autre partie ?
