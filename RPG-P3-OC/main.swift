@@ -8,5 +8,5 @@
 
 import Foundation
 
-print("Hello, OC P3")
+print("Hello, OC P3 RPG")
 
