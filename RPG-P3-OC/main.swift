@@ -13,27 +13,28 @@ var isWarOn: Bool = true
 var reply: String = ""
 print("Jeu de rôles - P3 - formation OC")
 print("==== S I M U L A T I O N =======")
+// Boucle sur les conflits (Conflict => Game(s) => Battle(s)=> fights)
 while isWarOn {
     isWarOn = true
     // boule partie
-    print(" Game started ")
+        print(" Game started ")
     // instancier un game
-    print(" création équipes et personnages")
-    print("  ... currect game ... ")
-    print(" ....jeu - batailles ")
-    print(" ... Equipe vainqueur - scores")
+        print(" création équipes et personnages")
+        print("  ... currect game ... ")
+        print(" ....jeu - batailles ")
+        print(" ... Equipe vainqueur - scores")
     // déclencher une nouvelle guerre ?
-    print ("Voulez vous déclencher un nouveau conflit (O/N) ?")
-    repeat { reply = readLine() ?? "N"} while reply != "O" && reply != "N"
+        print ("Voulez vous déclencher un nouveau conflit (O/N) ?")
+        repeat { reply = readLine() ?? "N"} while reply != "O" && reply != "N"
     // boucler sur une autre partie ?
     // fin boule partie
-    switch reply {
-    case "O" :
-        isWarOn = true
-    case "N" :
-        isWarOn = false
-    default :
-        print("choix incorrect")
+        switch reply {
+        case "O" :
+            isWarOn = true
+        case "N" :
+            isWarOn = false
+        default :
+            print("choix incorrect")
     }
 
 }
