@@ -12,7 +12,7 @@ class Team {
  //   var name: String = ""
     var teamName: String = ""
     var teamMembers = [Character]()
-    
+    static var allCharNames = [String]()
 // tableau de tous les noms pour test unicité ?
 //    var charName: String = ""
 //    var charactereName: String = ""
@@ -23,10 +23,11 @@ class Team {
         let nbMaxMembers = 3
         var i = 1
         while teamName == "" || teamName.first == " " {
+            print("")
             print("Saisir le nom de l'Equipe : ")
             if let inputNameT = readLine(){
                 teamName = inputNameT
-                print(teamName)
+                print("Choix des membres de l'équipe (\(teamName) : ")
             }
         } // fin while
         while i <= nbMaxMembers {
@@ -42,14 +43,21 @@ class Team {
     func chooseCharactere() -> Character? {
  //       let inputName: String = ""
         var charName = ""
-        while charName == "" || charName.first == " "{
+        while charName == "" || charName.first == " " || !Team.allCharNames.contains(charName) {
             print("choisir un nom de personnage")
+//            print(Team.allCharNames)
             if let inputNameC = readLine(){
                 charName = inputNameC
+                if !(Team.allCharNames.contains(charName))  {
+                    Team.allCharNames.append(charName)
+                } else {
+                    print("nom déja existant, essaie encore ")
+                    charName = ""
+                }
             } // fin if
          } // fin While
             print("personnage : \(charName)")
-            print ("choisir: 1 fighter 2 mage 3 Colossus 4 Dwarf")
+            print ("choisir: 1 fighter 2 magus 3 Colossus 4 Dwarf")
             repeat { reply = readLine() ?? "1"} while reply != "1" && reply != "2" && reply != "3" && reply != "4"
         // let character = Character(type: <#charType#>)
         // character.name = charName
@@ -60,7 +68,7 @@ class Team {
             character.name = charName
             return character
         case "2":
-            print("Mage")
+            print("Magus")
             let character = Character(type: .magus)
             character.name = charName
             return character
@@ -86,26 +94,33 @@ class Team {
     }  // fin func
 
 func parade(){
-        print("===============EQUIPES ET PERSONNAGES ===============")
-        print("");  print("")
-        print("EQUIPE :\(teamName)")
+    //        print("===============EQUIPES ET PERSONNAGES ===============")
+        print("");
+    print("L'EQUIPE : \(teamName) est composée des personnages suivant :")
     var c : Int = 0
     for character in teamMembers {
         // REPRENDRE ICI
-        c = c + 1
+        print("  Nom : \(character.name) Type : \(character.type) Arme : \(character.weapon) Pts de vie : \(character.lifePoints) Nuisance : \(character.damage)")
+        c += 1
     }
-        print(" Personnage : Nom - Type - Arme - Pts de vie - Force")
-        print("      Personnage 2 : Nom - Type - Arme - Pts de vie - Force")
-        print("      Personnage 3 : Nom - Type - Arme - Pts de vie - Force")
+//        print(" Personnage : Nom - Type - Arme - Pts de vie - Force")
+//    // print("  Personnage 1 : nom : \(Character.name)  - Type - Arme - Pts de vie - Force")
+//        print("      Personnage 2 : Nom - Type - Arme - Pts de vie - Force")
+//        print("      Personnage 3 : Nom - Type - Arme - Pts de vie - Force")
 //        print("EQUIPE 2:")
 //        print("      Personnage 1 : Nom - Type - Arme - Pts de vie - Force")
 //        print("      Personnage 2 : Nom - Type - Arme - Pts de vie - Force")
 //        print("      Personnage 3 : Nom - Type - Arme - Pts de vie - Force")
-        print("");  print("")
+        print("")
     }
     
 func isNameUnique(_ nameToTest: String) -> Bool {
  // si le nom est déja saisie dans l'Equipe ou dans toutes les équipes ?
+    let contains = Team.allCharNames.contains(where: { $0 == "B" })
+//    let strings = ["A", "B", "C", "D"]
+//    let contains = Team.Scontains(where: { $0 == "B" })
+//    let contains = strings.contains(where: { $0 == "B" })
+    //contains == true
     return false
 }
 //    func selectMember(){

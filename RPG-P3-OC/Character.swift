@@ -11,36 +11,45 @@ import Foundation
 enum charType {
     case fighter, magus, colossus, dwarf
 }
-enum weapon {
-    case sword(damage: Int)
-    case wand(damage: Int)
-    case mace(damage: Int)
-    case axe(damage: Int)
-}
+//enum weapon {
+//    case sword(damage: Int)
+//    case wand(damage: Int)
+//    case mace(damage: Int)
+//    case axe(damage: Int)
+//}
 
 class Character{
     var name: String = ""
     var type: charType
-    var weapon: weapon
-    var lifePoint: Int = 0
-// chaque personnage à un type, une arme et des points de vie
+    var weapon: String = "Axe"
+    var lifePoints: Int = 0
+    var damage: Int = 10
+//    var resistance: Int = 0  , option ? bonus ? à voir
+//  chaque personnage à un type, une arme et des points de vie
     init(type: charType) {
         self.type = type
         switch self.type {
         case .fighter:
-            self.weapon = .sword(damage: 10)
-            self.lifePoint = 100
+//            self.weapon = .sword(damage: 10)
+            self.weapon = "Sword"
+            self.damage = 10
+            self.lifePoints = 100
         case .magus:
-            self.weapon = .wand(damage: 20)
-            self.lifePoint = 80
+//            self.weapon = .wand(damage: 20)
+            self.weapon = "Wand"
+            self.damage = 20
+            self.lifePoints = 80
         case .colossus:
-            self.weapon = .mace(damage: 10)
-            self.lifePoint = 60
+//            self.weapon = .mace(damage: 30)
+            self.weapon = "Mace"
+            self.damage = 30
+            self.lifePoints = 60
         case .dwarf:
-            self.weapon = .axe(damage: 50)
-            self.lifePoint = 40
+//            self.weapon = .axe(damage: 50)
+            self.weapon = "Axe"
+            self.damage = 50
+            self.lifePoints = 40
         }
-        print("Character")
     }
     
 //let character1 = charType.fighter
@@ -57,19 +66,19 @@ class Character{
     // mourir
     // et la suite
 }
-
-class Colossus: Character {
-    
-}
-
-class Fighter: Character {
-    
-}
-
-class Mage: Character {
-    
-}
-
-class Dwarf: Character {
-    
-}
+//???
+//class Colossus: Character {
+//
+//}
+//
+//class Fighter: Character {
+//
+//}
+//
+//class Mage: Character {
+//
+//}
+//
+//class Dwarf: Character {
+//
+//}

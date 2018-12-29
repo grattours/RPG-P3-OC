@@ -10,14 +10,14 @@
 
 import Foundation
 
-class Weapon{
-    let  weaponName: String
-    let  deathPoints: Int
-    init(weaponName: String, deathPoints: Int ){
-        self.weaponName = weaponName
-        self.deathPoints = deathPoints
-    }
-}
+//class Weapon{
+//    let  weaponName: String
+//    let  deathPoints: Int
+//    init(weaponName: String, deathPoints: Int ){
+//        self.weaponName = weaponName
+//        self.deathPoints = deathPoints
+//    }
+//}
 //
 //class Sword: Weapon{
 //    init(){
