@@ -34,6 +34,9 @@ class Team {
             print(" ajout membre \(i) Equipe \(teamName)")
             i += 1
             teamMembers.append(chooseCharactere()!)
+            // séparer choix du nom et choix du type avec :
+            // teamMembers.append(chooseCharactereName()!)
+            // teamMembers.append(chooseCharactereType()!)
 //            teamMembers.append(charactereName)
         }// fin while
         
@@ -86,53 +89,66 @@ class Team {
             break
             
         }
-            // le type induit les points; l'arme et
-            // alimenter tableac
-            // tester nom existe ou pas (???)
-       return nil
-        // return Character
-    }  // fin func
 
-func parade(){
-    //        print("===============EQUIPES ET PERSONNAGES ===============")
-        print("");
-    print("L'EQUIPE : \(teamName) est composée des personnages suivant :")
-    var c : Int = 0
-    for character in teamMembers {
-        // REPRENDRE ICI
-        print("  Nom : \(character.name) Type : \(character.type) Arme : \(character.weapon) Pts de vie : \(character.lifePoints) Nuisance : \(character.damage)")
-        c += 1
-    }
-//        print(" Personnage : Nom - Type - Arme - Pts de vie - Force")
-//    // print("  Personnage 1 : nom : \(Character.name)  - Type - Arme - Pts de vie - Force")
-//        print("      Personnage 2 : Nom - Type - Arme - Pts de vie - Force")
-//        print("      Personnage 3 : Nom - Type - Arme - Pts de vie - Force")
-//        print("EQUIPE 2:")
-//        print("      Personnage 1 : Nom - Type - Arme - Pts de vie - Force")
-//        print("      Personnage 2 : Nom - Type - Arme - Pts de vie - Force")
-//        print("      Personnage 3 : Nom - Type - Arme - Pts de vie - Force")
-        print("")
+       return nil
+        
+    }  // fin func
+//
+//    func removeCharacterFromTheTeam(_ :Character) {
+////        let idx1 = teamMembers.firstIndex(where: { $0 === Character.self })
+////        print("idx \(idx1 ?? 0)")
+////        print("mort ou pas ?")
+//        if let idx = teamMembers.firstIndex(where: { $0 === Character.self }) {
+//            teamMembers.remove(at: idx)
+//        }
+//        // print("idx \(idx)")
+//        //let idx = 2
+//        // teamMembers.remove(at: idx)
+//
+//        // teamMembers.remove(at: idx)
+////        if let idx = objectArray.index(where: { $0 === objectToRemove }) {
+////            objectArray.remove(at: idx)
+////        }
+//
+//    }
+    
+    func chooseCharacterFromTheTeam(_ :Team) -> Character{
+        var choosenCharactere: Character
+         var isDead: Bool = false
+        print()
+         repeat {
+            //print("🤛♜♜♜♜♜♜♜♜♜♜♜♜♜♜ 👑👑👑 ♜♜♜♜♜♜♜♜♜♜♜♜♜♜♜🤜")
+             isDead = false
+            print("=> ⚔️ Choisir un personnage vivant (1/2/3 ou 4) de l'équipe : \(teamName)")
+            parade()
+            repeat { reply = readLine() ?? "1"} while (reply != "1" && reply != "2" && reply != "3")
+        
+            choosenCharactere = teamMembers[Int(reply)!-1]
+            print(" choix de \(choosenCharactere.name) avec \(choosenCharactere.lifePoints) points")
+            // let pts: Int = teamMembers[Int(reply)!].lifePoints
+             //if pts  <= 0 {
+              if choosenCharactere.lifePoints <= 0 {
+                print("Dommage, \(choosenCharactere.name) est mort, faut en choisir un autre")
+                 isDead = true
+              }
+          }
+         while isDead
+       
+        return choosenCharactere
     }
     
-func isNameUnique(_ nameToTest: String) -> Bool {
- // si le nom est déja saisie dans l'Equipe ou dans toutes les équipes ?
-    let contains = Team.allCharNames.contains(where: { $0 == "B" })
-//    let strings = ["A", "B", "C", "D"]
-//    let contains = Team.Scontains(where: { $0 == "B" })
-//    let contains = strings.contains(where: { $0 == "B" })
-    //contains == true
-    return false
-}
-//    func selectMember(){
-//        print("(Team) selectMember")
-//        // choix du type
-//        // saisie du nom
-//    }
-    // l'Equipe et le joueur sont assimilables - même nom par exemple.
-    // 2 équipes (paramètrer le nombre ?)
-    // nb personnages init 3
-    // personnages - tableau
-    // statut (enjeu / hors jeu)
-    // suite
+    
+func parade(){
+        print("");
+    var c : Int = 0
+    for character in teamMembers {
+        // if character.lifePoints > 0 {
+            print("\(c+1)   Nom : \(character.name) Type : \(character.type) Arme : \(character.weapon) Pts de vie : \(character.lifePoints) Nuisance : \(character.damage)")
+            c += 1
+       // }
+
+    }
+        print("")
+    }
     
 } //  fin classe

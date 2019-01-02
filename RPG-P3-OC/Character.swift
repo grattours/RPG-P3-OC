@@ -24,6 +24,7 @@ class Character{
     var weapon: String = "Axe"
     var lifePoints: Int = 0
     var damage: Int = 10
+    static var allNames = [String]()
 //    var resistance: Int = 0  , option ? bonus ? à voir
 //  chaque personnage à un type, une arme et des points de vie
     init(type: charType) {

@@ -26,8 +26,8 @@ while isWarOn {
     isWarOn = true
 //        print(" (main) Prémises de la guerre ")
 //        print(" (main) création équipes et personnages")
-        print("  (main) jeu en cours ... ")
-        print(" (main)jeu - batailles ")
+//                print("  (main) jeu en cours ... ")
+//        print(" (main)jeu - batailles ")
         currentGame.battle()
         print(" (main) Equipe vainqueur - scores")
         print ("Voulez vous déclencher un nouveau conflit (O/N) ?")
