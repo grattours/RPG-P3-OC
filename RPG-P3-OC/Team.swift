@@ -119,7 +119,7 @@ class Team {
          repeat {
             //print("🤛♜♜♜♜♜♜♜♜♜♜♜♜♜♜ 👑👑👑 ♜♜♜♜♜♜♜♜♜♜♜♜♜♜♜🤜")
              isDead = false
-            print("=> ⚔️ Choisir un personnage vivant (1/2/3 ou 4) de l'équipe : \(teamName)")
+            print("=> ⚔️ Choisir un personnage vivant (1/2/ou 3) de l'équipe : \(teamName)")
             parade()
             repeat { reply = readLine() ?? "1"} while (reply != "1" && reply != "2" && reply != "3")
         

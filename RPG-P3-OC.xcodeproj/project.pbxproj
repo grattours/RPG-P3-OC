@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC1BEA9821DE31A5000961B9 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1BEA9721DE31A5000961B9 /* extensions.swift */; };
 		FC7AA58521CBFBEB00918A51 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7AA58421CBFBEB00918A51 /* Game.swift */; };
 		FC7AA58721CBFD3900918A51 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7AA58621CBFD3900918A51 /* Character.swift */; };
 		FC7AA58921CC090E00918A51 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7AA58821CC090E00918A51 /* Team.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FC1BEA9721DE31A5000961B9 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		FC7AA57A21CBE82900918A51 /* RPG-P3-OC */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "RPG-P3-OC"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC7AA58421CBFBEB00918A51 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		FC7AA58621CBFD3900918A51 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 			children = (
 				FC7AA58621CBFD3900918A51 /* Character.swift */,
 				FC7AA58421CBFBEB00918A51 /* Game.swift */,
+				FC1BEA9721DE31A5000961B9 /* extensions.swift */,
 				FCE2F81A21CDAC6300E44A84 /* Weapon.swift */,
 				FC7AA58821CC090E00918A51 /* Team.swift */,
 				FCB1823921CD046800EF00DD /* main.swift */,
@@ -136,6 +139,7 @@
 				FC7AA58721CBFD3900918A51 /* Character.swift in Sources */,
 				FCB1823A21CD046800EF00DD /* main.swift in Sources */,
 				FC7AA58521CBFBEB00918A51 /* Game.swift in Sources */,
+				FC1BEA9821DE31A5000961B9 /* extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
