@@ -7,13 +7,20 @@
 //
 
 import Foundation
-
+// to facilitate the conversion of dates
 extension Date {
+    // return date in french text
     func toString() -> String {
         let formatter = DateFormatter()
-        // formatter.dateStyle = .long
+        //formatter.dateStyle = .long
         formatter.dateStyle = .medium
-        formatter.timeStyle = .short
+        formatter.timeStyle = .medium
+        return(formatter.string(from: self))
+    }
+    // returns hh mm ss from a date
+    func toHHMSS() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "hh:mm:ss"
         return(formatter.string(from: self))
     }
 }
